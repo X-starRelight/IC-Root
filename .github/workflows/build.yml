@@ -19,8 +19,10 @@ jobs:
         with:
           java-version: '25'
           distribution: 'microsoft'
-      - name: make gradle wrapper executable
-        run: chmod +x ./gradlew
+      - name: make gradle wrappers executable
+        run: |
+          chmod +x ./gradlew
+          chmod +x ./IC-Root-Example/gradlew
       - name: build
         run: ./gradlew build
       - name: build Example Mod
