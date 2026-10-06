@@ -8,7 +8,7 @@
 		"tt23xrstudio"
 	],
 	"contact": {},
-	"license": "GNU AGPL v3.0",
+	"license": "GNU GPL v3.0",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
