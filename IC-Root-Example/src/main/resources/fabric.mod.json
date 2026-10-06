@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "ic-root-example",
+	"version": "${version}",
+	"name": "IC Root Example",
+	"description": "示例 Mod：演示如何通过 ICSeries / ICMod 向 ic-root 注册命令",
+	"authors": [
+		"tt23xrstudio"
+	],
+	"contact": {},
+	"license": "GNU AGPL v3.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tt23xrstudio.icexample.ICExampleMod"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*",
+		"ic-root": ">=0.1.0"
+	}
+}

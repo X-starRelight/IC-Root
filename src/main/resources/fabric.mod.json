@@ -1,0 +1,27 @@
+{
+	"schemaVersion": 1,
+	"id": "ic-root",
+	"version": "${version}",
+	"name": "Improved Commands - Root",
+	"description": "Improved Commands 系列的统一命令入口 /ic",
+	"authors": [
+		"tt23xrstudio"
+	],
+	"contact": {
+	},
+	"license": "GNU AGPL v3.0",
+	"icon": "assets/ic-root/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.tt23xrstudio.icroot.ICRootMod"
+		]
+	},
+	"mixins": [],
+	"depends": {
+		"fabricloader": ">=0.19.0",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

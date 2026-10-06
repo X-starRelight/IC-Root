@@ -1,0 +1,37 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+repositories {
+	// Loom 已提供 Minecraft / Fabric 仓库
+}
+
+dependencies {
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	// 依赖父项目 ic-root 构建产物（先在父目录执行 gradlew build）。
+	// MC 26.2 为非混淆版本，Loom 不做 remap，直接以文件依赖引用即可，
+	// 无需 modImplementation（该配置在非混淆模式下由 Loom 跳过创建）。
+	implementation files("../build/libs/ic-root-0.1.0.jar")
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+java {
+	withSourcesJar()
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
