@@ -1,5 +1,7 @@
 # Improved Commands - Root
 
+![Logo](./icon.png)
+
 Improved Commands - Root（IC-Root）是一个 Fabric Mod，为 Improved Commands 系列生态提供统一的命令入口 `/ic`：各 Mod 把自己的命令注册到 IC，通过 `/ic run <name>` 统一调用，并附带注册表查询、返回值驱动的自动化支持。
 
 ## 基本信息
