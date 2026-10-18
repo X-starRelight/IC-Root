@@ -65,7 +65,7 @@ public final class ICMod {
      */
     public void RegMod(CommandDispatcher<CommandSourceStack> dispatcher) {
         if (dispatcher == null) {
-            throw new IllegalArgumentException("dispatcher 不能为 null");
+            throw new IllegalArgumentException("dispatcher cannot be null");
         }
         // 后者覆盖前者
         this.dispatcher = dispatcher;
@@ -81,7 +81,7 @@ public final class ICMod {
      */
     public void RegMod(Consumer<CommandDispatcher<CommandSourceStack>> registrar) {
         if (registrar == null) {
-            throw new IllegalArgumentException("registrar 不能为 null");
+            throw new IllegalArgumentException("registrar cannot be null");
         }
         // 尚未创建则新建；已存在则在其上继续追加
         if (this.dispatcher == null) {
