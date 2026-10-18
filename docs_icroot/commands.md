@@ -51,14 +51,14 @@ IC-Root 提供统一入口命令 `/ic`，包含三个子命令：`check`、`list
 
 | 情况 | 消息 | 消息类型 | 返回值 |
 |---|---|---|---|
-| 有注册 | 第 1 行：`[IC-Root] You have installed {X} mods that depend on IC-Root.`<br>第 2 行：Mod 名单，一行逗号分隔（如 `example, foo`） | `sendSuccess` | `X`（数量） |
+| 有注册 | 第 1 行：`[IC-Root] You have installed {X} mod(s) that depend on IC-Root.`<br>第 2 行：Mod 名单，一行逗号分隔（如 `example, foo`） | `sendSuccess` | `X`（数量） |
 | 无注册 | `[IC-Root] You haven't installed any mods that depend on IC-Root` | `sendFailure`（红色） | `0` |
 
 ### 示例
 
 ```text
 /ic list
-# [IC-Root] You have installed 2 mods that depend on IC-Root.
+# [IC-Root] You have installed 2 mod(s) that depend on IC-Root.
 # example, foo
 # 返回 2
 ```
@@ -122,7 +122,7 @@ IC-Root 提供统一入口命令 `/ic`，包含三个子命令：`check`、`list
 |---|---|
 | `[IC-Root] Find the Mod with ID {ID}.` | `sendSuccess` |
 | `[IC-Root] Mod with ID {ID} not found.` | `sendFailure` |
-| `[IC-Root] You have installed {X} mods that depend on IC-Root.` + 名单 | `sendSuccess` |
+| `[IC-Root] You have installed {X} mod(s) that depend on IC-Root.` + 名单 | `sendSuccess` |
 | `[IC-Root] You haven't installed any mods that depend on IC-Root` | `sendFailure` |
 | `[IC-Root] Return {Return}` | `sendSuccess` |
 | `[IC-Root] Recursion depth limit (8) reached. You cannot do this.` | `sendFailure` |
