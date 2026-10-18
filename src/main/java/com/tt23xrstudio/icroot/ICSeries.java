@@ -44,13 +44,13 @@ public final class ICSeries {
     public static ICMod register(String name, boolean runFeedback) {
         if (frozen) {
             throw new IllegalStateException(
-                    "IC 注册表已冻结，禁止在命令树构建后注册: " + name);
+                    "The IC registry is frozen; registration after the command tree has been built is prohibited:" + name);
         }
         if (name == null || name.isEmpty()) {
-            throw new IllegalArgumentException("注册名不能为空");
+            throw new IllegalArgumentException("The registration name cannot be empty.");
         }
         if (REGISTRY.containsKey(name)) {
-            throw new IllegalStateException("Mod 名重复注册: " + name);
+            throw new IllegalStateException("Duplicate mod name registration: " + name);
         }
         ICMod mod = new ICMod(name, runFeedback);
         REGISTRY.put(name, mod);
