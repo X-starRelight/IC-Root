@@ -118,7 +118,7 @@ public class ICRootMod implements ModInitializer {
                     if (names.isEmpty()) {
                         // 无注册：Failure 消息（红色）+ 返回 0
                         context.getSource().sendFailure(Component.literal(
-                                "[IC-Root] You haven't installed any mods that depend on IC-Root"));
+                                "[IC-Root] You haven't installed any mods that depend on / registered with IC-Root"));
                         return 0;
                     }
                     // 有注册：Success 消息，第 1 行数量，第 2 行逗号分隔名单
@@ -127,7 +127,7 @@ public class ICRootMod implements ModInitializer {
                         joiner.add(name);
                     }
                     String message = "[IC-Root] You have installed " + names.size()
-                            + " mods that depend on IC-Root.\n" + joiner;
+                            + " mod(s) that depend on / registered with IC-Root.\n" + joiner;
                     context.getSource().sendSuccess(
                             () -> Component.literal(message), false);
                     return names.size();
@@ -277,7 +277,7 @@ public class ICRootMod implements ModInitializer {
         try {
             COMMAND_FIELD.set(node, command);
         } catch (IllegalAccessException e) {
-            throw new IllegalStateException("无法包装命令节点: " + node.getName(), e);
+            throw new IllegalStateException("Unable to wrap command node:" + node.getName(), e);
         }
     }
 }
