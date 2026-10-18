@@ -110,7 +110,7 @@ public class MyMod implements ModInitializer {
 |---|---|---|
 | `/ic check "mymod"` | `[IC-Root] Find the Mod with ID mymod.`（普通色） | 1 |
 | `/ic check "nope"` | `[IC-Root] Mod with ID nope not found.`（红色） | 0 |
-| `/ic list` | `[IC-Root] You have installed 1 mods that depend on IC-Root.` ↵ `mymod` | 1 |
+| `/ic list` | `[IC-Root] You have installed 1 mod(s) that depend on IC-Root.` ↵ `mymod` | 1 |
 | `/ic run mymod ping` | `Pong!` ↵ `[IC-Root] Return 1` | 1 |
 | `/ic run mymod add 2 3` | `[IC-Root] Return 5` | 5 |
 
