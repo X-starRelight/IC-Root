@@ -31,7 +31,7 @@ Improved Commands - Root（IC-Root）是一个 Fabric Mod，为 MC Mod 生态提
 # [IC-Root] Find the Mod with ID example.                （返回 1）
 
 /ic list
-# [IC-Root] You have installed 2 mods that depend on IC-Root.
+# [IC-Root] You have installed 2 mod(s) that depend on IC-Root.
 # example, foo                                            （返回 2）
 
 /ic run example add 2 3
