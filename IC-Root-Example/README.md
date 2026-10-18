@@ -4,8 +4,8 @@
 
 ## 前置
 
-1. 先在父目录 `IC-Root` 执行 `gradlew build`，生成 `build/libs/ic-root-1.0.0.jar`
-2. 本项目通过 `implementation files("../build/libs/ic-root-1.0.0.jar")` 引用
+1. 先在父目录 `IC-Root` 执行 `gradlew build`，生成 `build/libs/ic-root-0.1.0.jar`
+2. 本项目通过 `implementation files("../build/libs/ic-root-0.1.0.jar")` 引用
    （MC 26.2 为非混淆版本，Loom 不 remap，无需 `modImplementation`）
 
 ## 构建
@@ -27,6 +27,8 @@ mod.RegMod(dispatcher -> {
     // 子命令级 false：注册期定死，永不发送 run 反馈
     dispatcher.register(Commands.literal("quiet")
             .executes(ICFeedback.executes(false, ctx -> 42)));
+
+   // 此部分为节选，详细请直接查看源码
 });
 ```
 
@@ -38,7 +40,7 @@ mod.RegMod(dispatcher -> {
 |---|---|---|
 | `/ic check "example"` | `[IC-Root] Find the Mod with ID example.`（Success） | 1 |
 | `/ic check "nope"` | `[IC-Root] Mod with ID nope not found.`（Failure，红色） | 0 |
-| `/ic list` | `[IC-Root] You have installed 1 mods...` ↵ `example`（Success） | 1 |
+| `/ic list` | `[IC-Root] You have installed 1 mod(s)...` ↵ `example`（Success） | 1 |
 | `/ic run example hello` | 问候 + `[IC-Root] Return 1` | 1 |
 | `/ic run example add 2 3` | `[IC-Root] Return 5` | 5 |
 | `/ic run example quiet` | 仅命令本体消息，**无** Return 反馈 | 42 |
