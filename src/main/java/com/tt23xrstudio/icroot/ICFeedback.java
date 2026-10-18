@@ -39,7 +39,7 @@ public final class ICFeedback {
     public static Command<CommandSourceStack> executes(
             boolean runFeedback, Command<CommandSourceStack> command) {
         if (command == null) {
-            throw new IllegalArgumentException("command 不能为 null");
+            throw new IllegalArgumentException("command cannot be null");
         }
         return new FlaggedCommand(runFeedback, command);
     }
